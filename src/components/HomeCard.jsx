@@ -1,4 +1,3 @@
-
 import Card from "./Card";
 import { Link } from "react-router-dom";
 
@@ -27,7 +26,7 @@ const HomeCard = () => {
             </p>
             <Link
               to="/add-job"
-              className="inline-block bg-indigo-500 text-white rounded-lg px-4 py-2 hover:bg-indigo-600"
+              className="inline-block bg-teal-700 text-white rounded-lg px-4 py-2 hover:bg-teal-800"
             >
               Add Job
             </Link>
