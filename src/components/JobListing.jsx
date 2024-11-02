@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaMapMarker } from "react-icons/fa";
 
-const JobListing = ({ job }) => {
+export const JobListing = ({ job }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   let description = job.description;
@@ -43,5 +42,3 @@ const JobListing = ({ job }) => {
     </div>
   );
 };
-
-export default JobListing;

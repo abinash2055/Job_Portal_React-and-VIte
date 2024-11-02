@@ -1,5 +1,5 @@
 import jobs from "../jobs.json";
-import JobListing from "./JobListing";
+import { JobListing } from "./JobListing";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
@@ -33,7 +33,7 @@ const JobListings = ({ isHome = false }) => {
             <h2>Loading data..........</h2>
           ) : (
             <>
-              {jobs.map((job) => (
+              {jobs.jobs.map((job) => (
                 <JobListing key={job.id} job={job} />
               ))}
             </>
