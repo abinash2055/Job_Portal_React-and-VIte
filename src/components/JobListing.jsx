@@ -42,3 +42,4 @@ export const JobListing = ({ job }) => {
     </div>
   );
 };
+
