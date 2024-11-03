@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import { FaMapMarker } from "react-icons/fa";
 
 export const JobListing = ({ job }) => {
@@ -32,7 +33,7 @@ export const JobListing = ({ job }) => {
             {job.location}
           </div>
           <Link
-            to={`/job/${job.id}`}
+            to={`/jobs/${job.id}`}
             className="h-9 bg-indigo-500 hover:bg-indigo-600 text-white px-2 py-2 rounded-lg text-center text-sm"
           >
             Read More
@@ -43,3 +44,15 @@ export const JobListing = ({ job }) => {
   );
 };
 
+JobListing.propTypes = {
+  job: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    salary: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+export default JobListing;
