@@ -1,9 +1,9 @@
-import { JobListing } from "./JobListing";
 import { useState, useEffect } from "react";
+import JobListing from "./JobListing";
 import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 
-const JobListings = ({ isHome }) => {
+const JobListings = ({ isHome = false }) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -15,11 +15,12 @@ const JobListings = ({ isHome }) => {
         const data = await res.json();
         setJobs(data);
       } catch (error) {
-        console.error("Error in fetching the data", error);
+        console.log("Error fetching data", error);
       } finally {
         setLoading(false);
       }
     };
+
     fetchJobs();
   }, []);
 
@@ -48,6 +49,7 @@ JobListings.propTypes = {
   isHome: PropTypes.bool,
 };
 
+// Set default value for isHome
 JobListings.defaultProps = {
   isHome: false,
 };

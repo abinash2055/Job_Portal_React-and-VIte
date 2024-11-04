@@ -1,4 +1,3 @@
-
 import JobListings from "../components/JobListings";
 
 const JobsPage = () => {
@@ -8,5 +7,4 @@ const JobsPage = () => {
     </section>
   );
 };
-
 export default JobsPage;
